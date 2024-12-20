@@ -1,0 +1,13 @@
+services:
+  app:
+    image: ruby:3.3.6
+    volumes:
+      - ./:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - 3000:3000
+    working_dir: /app
+    command: ["rails", "s", "-b", "0.0.0.0"]
+
+volumes:
+  bundle:
